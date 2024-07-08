@@ -1,0 +1,100 @@
+﻿@model WebApplicationForMilitaria.Application.FirstProviderFileOne.ProductOneDto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProductId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id) XML File
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price.Gross) Price
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price.Gross)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price.Vat) Price
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price.Vat)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price.Net) Price
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price.Net)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Srp.Gross) Srp
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Srp.Gross)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Srp.Vat) Srp
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Srp.Vat)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Srp.Net) Srp
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Srp.Net)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sizes.SizeList[0].Code) Size
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sizes.SizeList[0].Code)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sizes.SizeList[0].CodeProducer) Size
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sizes.SizeList[0].CodeProducer)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Size.Weight) Size
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Size.Weight)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stock.Quantity) Stock
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stock.Quantity)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-outline-secondary" asp-controller="FirstProviderFileOne" asp-action="Edit" asp-route-id="@Model.ProductId">Edit</a>
+    <a class="btn btn-outline-secondary" asp-action="Index">Back to List</a>
+</div>

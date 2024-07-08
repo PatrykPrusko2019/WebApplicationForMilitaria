@@ -1,0 +1,203 @@
+﻿{
+  "billingEntries": [
+    {
+      "id": "162b7f26-7df1-4b82-9f27-2fbfb71d937f",
+      "occurredAt": "2024-07-02T09:39:59.782Z",
+      "type": {
+        "id": "USF",
+        "name": "Jednostkowa opłata transakcyjna"
+      },
+      "offer": {
+        "id": "7770594916",
+        "name": "Repelent Mugga spray 9,4% DEET 75 odstraszasz na komary i kleszcze"
+      },
+      "value": {
+        "amount": "-1.00",
+        "currency": "PLN"
+      },
+      "tax": {
+        "percentage": "23.00"
+      },
+      "balance": {
+        "amount": "-42.80",
+        "currency": "PLN"
+      },
+      "order": {
+        "id": "024ac720-3857-11ef-ac0a-e5fcc384aba0"
+      }
+    },
+    {
+      "id": "465a043f-18f5-439d-a20f-092c807ea0ff",
+      "occurredAt": "2024-07-02T09:39:59.730Z",
+      "type": {
+        "id": "SUC",
+        "name": "Prowizja od sprzedaży"
+      },
+      "offer": {
+        "id": "7770594916",
+        "name": "Repelent Mugga spray 9,4% DEET 75 odstraszasz na komary i kleszcze"
+      },
+      "value": {
+        "amount": "-34.00",
+        "currency": "PLN"
+      },
+      "tax": {
+        "percentage": "23.00"
+      },
+      "balance": {
+        "amount": "-41.80",
+        "currency": "PLN"
+      },
+      "order": {
+        "id": "024ac720-3857-11ef-ac0a-e5fcc384aba0"
+      }
+    },
+    {
+      "id": "91a7bfc8-dc9f-4e27-aa1b-d446f151d198",
+      "occurredAt": "2024-07-02T07:48:27.185Z",
+      "type": {
+        "id": "USF",
+        "name": "Jednostkowa opłata transakcyjna"
+      },
+      "offer": {
+        "id": "7770594916",
+        "name": "Repelent Mugga spray 9,4% DEET 75 odstraszasz na komary i kleszcze"
+      },
+      "value": {
+        "amount": "-1.00",
+        "currency": "PLN"
+      },
+      "tax": {
+        "percentage": "23.00"
+      },
+      "balance": {
+        "amount": "-7.80",
+        "currency": "PLN"
+      },
+      "order": {
+        "id": "64f97c00-3847-11ef-ac0a-e5fcc384aba0"
+      }
+    },
+    {
+      "id": "1e16a55f-dcbc-4e7c-b91a-350a8dd19271",
+      "occurredAt": "2024-07-02T07:48:27.094Z",
+      "type": {
+        "id": "SUC",
+        "name": "Prowizja od sprzedaży"
+      },
+      "offer": {
+        "id": "7770594916",
+        "name": "Repelent Mugga spray 9,4% DEET 75 odstraszasz na komary i kleszcze"
+      },
+      "value": {
+        "amount": "-6.80",
+        "currency": "PLN"
+      },
+      "tax": {
+        "percentage": "23.00"
+      },
+      "balance": {
+        "amount": "-6.80",
+        "currency": "PLN"
+      },
+      "order": {
+        "id": "64f97c00-3847-11ef-ac0a-e5fcc384aba0"
+      }
+    },
+    {
+      "id": "b8bc0d4f-4ad5-4c04-acca-fc92f0b276d6",
+      "occurredAt": "2024-06-30T21:59:59.999999Z",
+      "type": {
+        "id": "SUM",
+        "name": "Podsumowanie miesiąca"
+      },
+      "value": {
+        "amount": "0.00",
+        "currency": "PLN"
+      },
+      "tax": {
+        "percentage": "0.00"
+      },
+      "balance": {
+        "amount": "0.00",
+        "currency": "PLN"
+      }
+    },
+    {
+      "id": "16a66e56-c9ae-4df5-a3c5-e704ac467222",
+      "occurredAt": "2024-06-26T09:49:33.610Z",
+      "type": {
+        "id": "PB2",
+        "name": "Wpłata"
+      },
+      "value": {
+        "amount": "44.63",
+        "currency": "PLN"
+      },
+      "tax": {
+        "percentage": "23.00"
+      },
+      "balance": {
+        "amount": "0.00",
+        "currency": "PLN"
+      }
+    },
+    {
+      "id": "225d946d-4338-438a-a4ef-ed54e408ce6d",
+      "occurredAt": "2024-05-31T21:59:59.999999Z",
+      "type": {
+        "id": "SUM",
+        "name": "Podsumowanie miesiąca"
+      },
+      "value": {
+        "amount": "0.00",
+        "currency": "PLN"
+      },
+      "tax": {
+        "percentage": "0.00"
+      },
+      "balance": {
+        "amount": "-44.63",
+        "currency": "PLN"
+      }
+    },
+    {
+      "id": "7251e456-e90c-400e-b6e2-9960c39ea803",
+      "occurredAt": "2024-04-30T21:59:59.999999Z",
+      "type": {
+        "id": "SUM",
+        "name": "Podsumowanie miesiąca"
+      },
+      "value": {
+        "amount": "0.00",
+        "currency": "PLN"
+      },
+      "tax": {
+        "percentage": "0.00"
+      },
+      "balance": {
+        "amount": "-44.63",
+        "currency": "PLN"
+      }
+    },
+    {
+      "id": "875ac8fc-4b80-4b1a-b763-22f4c33230f9",
+      "occurredAt": "2024-03-31T21:59:59.999999Z",
+      "type": {
+        "id": "SUM",
+        "name": "Podsumowanie miesiąca"
+      },
+      "value": {
+        "amount": "0.00",
+        "currency": "PLN"
+      },
+      "tax": {
+        "percentage": "0.00"
+      },
+      "balance": {
+        "amount": "-44.63",
+        "currency": "PLN"
+      }
+    }
+  ]
+}

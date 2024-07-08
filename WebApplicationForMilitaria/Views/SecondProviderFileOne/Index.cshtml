@@ -1,0 +1,76 @@
+﻿@model IEnumerable<WebApplicationForMilitaria.Application.SecondProviderFileOne.ProductThreeDto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lists Of SecondProviderOneFile</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-secondary">Create </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ean)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sku)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Availability)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductIdFromXML)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ean)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sku)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Availability)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductIdFromXML)
+            </td>
+            <td>
+                    <a class="btn btn-outline-secondary" asp-controller="SecondProviderFileOne" asp-action="Details" asp-route-id="@item.Id">Details</a>
+
+
+                    @if (item.IsEditable)
+                    {
+                        <a class="btn btn-outline-secondary" asp-controller="SecondProviderFileOne" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a class="btn btn-outline-secondary" asp-controller="SecondProviderFileOne" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

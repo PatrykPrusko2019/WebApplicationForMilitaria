@@ -1,0 +1,88 @@
+﻿@model WebApplicationForMilitaria.Application.JsonFile.Commands.CreateJsonFile.CreateJsonFileCommand
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="OccurredAt" class="control-label"></label>
+                <input asp-for="OccurredAt" class="form-control" />
+                <span asp-validation-for="OccurredAt" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="Balance.Amount" class="control-label"></label>
+                <input asp-for="Balance.Amount" class="form-control" />
+                <span asp-validation-for="Balance.Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Balance.Currency" class="control-label"></label>
+                <input asp-for="Balance.Currency" class="form-control" />
+                <span asp-validation-for="Balance.Currency" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Offer.Name" class="control-label"></label>
+                <input asp-for="Offer.Name" class="form-control" />
+                <span asp-validation-for="Offer.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Offer.OfferIdJson" class="control-label"></label>
+                <input asp-for="Offer.OfferIdJson" class="form-control" />
+                <span asp-validation-for="Offer.OfferIdJson" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Order.OrderIdJson" class="control-label"></label>
+                <input asp-for="Order.OrderIdJson" class="form-control" />
+                <span asp-validation-for="Order.OrderIdJson" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Tax.Percentage" class="control-label"></label>
+                <input asp-for="Tax.Percentage" class="form-control" />
+                <span asp-validation-for="Tax.Percentage" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Type.Name" class="control-label"></label>
+                <input asp-for="Type.Name" class="form-control" />
+                <span asp-validation-for="Type.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type.TypeIdJson" class="control-label"></label>
+                <input asp-for="Type.TypeIdJson" class="form-control" />
+                <span asp-validation-for="Type.TypeIdJson" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Value.Amount" class="control-label"></label>
+                <input asp-for="Value.Amount" class="form-control" />
+                <span asp-validation-for="Value.Amount" class="text-danger"></span>
+            </div><div class="form-group">
+                <label asp-for="Value.Currency" class="control-label"></label>
+                <input asp-for="Value.Currency" class="form-control" />
+                <span asp-validation-for="Value.Currency" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,138 @@
+﻿@using WebApplicationForMilitaria.Application.ApplicationUser
+@using WebApplicationForMilitaria.Application.SecondProviderFileTwo.Commands.CreatePhotoCategoryModal
+@model IEnumerable<WebApplicationForMilitaria.Application.SecondProviderFileTwo.ProductFourDto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>List Of SecondProviderFileTwo</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-secondary">Create </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ean)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sku)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PKWiU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequiredBox)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantityPerBox)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceAfterDiscountNet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RetailPriceGross)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ean)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sku)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Url)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Unit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PKWiU)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InStock)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Qty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequiredBox)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantityPerBox)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PriceAfterDiscountNet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RetailPriceGross)
+                </td>
+                <td>
+
+                    
+                    <a class="btn btn-outline-secondary" asp-controller="SecondProviderFileTwo" asp-action="Details" asp-route-id="@item.ProductId">Details</a>
+
+                    
+                    @if (item.IsEditable)
+                    {
+                        <a class="btn btn-outline-secondary" asp-controller="SecondProviderFileTwo" asp-action="Edit" asp-route-id="@item.ProductId">Edit</a>
+                        <a class="btn btn-outline-secondary" asp-controller="SecondProviderFileTwo" asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                    }
+                    
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="~/js/PhotoCategory/Create.js"></script>
+}

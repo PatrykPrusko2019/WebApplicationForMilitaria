@@ -1,0 +1,83 @@
+﻿@model IEnumerable<WebApplicationForMilitaria.Application.FirstProviderFileOne.ProductOneDto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List Of FirstProviderFileOne</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-secondary">Create</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id) XMLFile
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price.Gross) Price
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price.Net) Price
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price.Vat) Price
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Srp.Gross) Srp
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Srp.Net) Srp
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Srp.Vat) Srp
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price.Gross)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price.Net)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price.Vat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Srp.Gross)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Srp.Net)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Srp.Vat)
+            </td>
+            <td>
+                    <a class="btn btn-outline-secondary" asp-controller="FirstProviderFileOne" asp-action="Details" asp-route-id="@item.ProductId">Details</a>
+
+
+                    @if (item.IsEditable)
+                    {
+                        <a class="btn btn-outline-secondary" asp-controller="FirstProviderFileOne" asp-action="Edit" asp-route-id="@item.ProductId">Edit</a>
+                        <a class="btn btn-outline-secondary" asp-controller="FirstProviderFileOne" asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                    }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

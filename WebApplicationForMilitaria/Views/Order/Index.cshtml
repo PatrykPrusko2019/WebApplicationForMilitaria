@@ -1,0 +1,43 @@
+﻿@model IEnumerable<WebApplicationForMilitaria.Application.JsonFile.DtosJsons.BillingEntryDto>
+
+
+<h1>List Of Orders (Json File from API Allegro)</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-secondary">Create</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OccurredAt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OccurredAt)
+            </td>
+            <td>
+                    <a class="btn btn-outline-secondary" asp-controller="Order" asp-action="Details" asp-route-id="@item.Id">Details</a>
+
+
+                    @if (item.IsEditable)
+                    {
+                        <a class="btn btn-outline-secondary" asp-controller="Order" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a class="btn btn-outline-secondary" asp-controller="Order" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
