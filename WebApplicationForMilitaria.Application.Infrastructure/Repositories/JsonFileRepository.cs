@@ -42,19 +42,28 @@ namespace WebApplicationForMilitaria.Infrastructure.Repositories
         {
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Files/JsonFilesFromAllegroAPI.txt");
             string results = "";
-            
+            StringBuilder temp = new StringBuilder();
+
+
             if (System.IO.File.Exists(filePath))
             {
                  results = System.IO.File.ReadAllText(filePath);
                 return results;
             }
-            
+
+            if (File.Exists(Path.Combine(Directory.GetCurrentDirectory(), token.ToString())))
+            {
+                temp.Append(File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), token.ToString())));
+
+            }
 
             try
             {
                 HttpClient client = new HttpClient();
 
                 string url = "https://api.allegro.pl.allegrosandbox.pl/billing/billing-entries";
+
+                if (token.ToString().Count() < 20) { token.Clear(); token = temp; }
 
                 int first = token.Length/2;
                 int second = first+1;
@@ -64,7 +73,7 @@ namespace WebApplicationForMilitaria.Infrastructure.Repositories
 
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.allegro.public.v1+json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", str1 + str2);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",  str1 + str2);
 
                 HttpResponseMessage response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();

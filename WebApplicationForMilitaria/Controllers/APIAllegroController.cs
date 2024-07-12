@@ -36,6 +36,7 @@ namespace WebApplicationForMilitaria.MVC.Controllers
             else
             {
                 ViewBag.FileContent = "File does not exist.";
+                _toastService.Error("Files from API Allegro not downloaded");
             }
 
             return View();
@@ -56,9 +57,27 @@ namespace WebApplicationForMilitaria.MVC.Controllers
             
             var records = await _mediator.Send(new GetAllRecordsFromAPIAllegroQuery(builder));
 
-            if (records.ToString() != "")
+            if (records.ToString() != "Something wrong" && records.ToString().Count() > 1)
             {
                 _toastService.Success("Files from API Allegro downloaded");
+            }
+
+            ViewBag.Message = records.ToJson().ToString();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetFilesFromFileTokenTxt()
+        {
+            var records = await _mediator.Send(new GetAllRecordsFromAPIAllegroQuery(builder.Append("Files/token.txt")));
+
+            if (records.ToString() != "Something wrong" && records.ToString().Count() > 1)
+            {
+                _toastService.Success("Files from API Allegro downloaded (from Files/token.txt)");
+            }
+            else
+            {
+                _toastService.Error("Wrong token in file token.txt");
             }
 
             ViewBag.Message = records.ToJson().ToString();
