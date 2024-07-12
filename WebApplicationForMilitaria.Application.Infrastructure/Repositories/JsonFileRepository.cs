@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using NuGet.Protocol;
+using System.Net.Http.Headers;
+using System.Text;
 using WebApplicationForMilitaria.Domain.Entities.JsonFIle;
 using WebApplicationForMilitaria.Domain.Interfaces;
 using WebApplicationForMilitaria.Domain.JsonList;
@@ -34,6 +37,52 @@ namespace WebApplicationForMilitaria.Infrastructure.Repositories
         public async Task<IEnumerable<BillingEntry>> GetAll()
         => await _dbContext.BillingEntries
             .Include(t => t.Type).ToListAsync();
+
+        public async Task<string> GetAllAPIAllegro(StringBuilder token)
+        {
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Files/JsonFilesFromAllegroAPI.txt");
+            string results = "";
+            
+            if (System.IO.File.Exists(filePath))
+            {
+                 results = System.IO.File.ReadAllText(filePath);
+                return results;
+            }
+            
+
+            try
+            {
+                HttpClient client = new HttpClient();
+
+                string url = "https://api.allegro.pl.allegrosandbox.pl/billing/billing-entries";
+
+                int first = token.Length/2;
+                int second = first+1;
+
+                string str1 = token.ToString().Substring(0, first);
+                string str2 = token.ToString().Substring(second-1);
+
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.allegro.public.v1+json"));
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", str1 + str2);
+
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+
+                string json = await response.Content.ReadAsStringAsync();
+
+                System.IO.File.WriteAllText("Files/JsonFilesFromAllegroAPI.txt", json);
+
+                results = json;
+                return results;
+
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return "Something wrong";
+        }
 
         public async Task<BillingEntry> GetRecordById(int id)
         => await _dbContext.BillingEntries

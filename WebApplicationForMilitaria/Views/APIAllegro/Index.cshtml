@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Hi";
+}
+
+<h2>Enter your data</h2>
+
+<form method="post" asp-action="SubmitDataFirst">
+    <div>
+        <label for="token">Input Data First:</label>
+        <textarea id="token" name="token" rows="20" cols="100">@ViewBag.token</textarea>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+<form method="post" asp-action="SubmitDataSecond">
+    <div>
+        <label for="token">Input Data Second:</label>
+        <textarea id="token" name="token" rows="20" cols="100">@ViewBag.token</textarea>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}
+
+<h3>File Content:</h3>
+<p>@ViewBag.FileContent</p>
+

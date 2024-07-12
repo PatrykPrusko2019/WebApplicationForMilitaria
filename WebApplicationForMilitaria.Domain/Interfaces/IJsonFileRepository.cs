@@ -1,4 +1,5 @@
 ﻿
+using System.Text;
 using WebApplicationForMilitaria.Domain.Entities.JsonFIle;
 using WebApplicationForMilitaria.Domain.JsonList;
 
@@ -13,5 +14,7 @@ namespace WebApplicationForMilitaria.Domain.Interfaces
         Task<BillingEntry> GetRecordById(int id);
         Task Commit();
         Task Delete(BillingEntry deletedRecord);
+
+        Task<string> GetAllAPIAllegro(StringBuilder token);
     }
 }
